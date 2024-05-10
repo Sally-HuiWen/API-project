@@ -9,9 +9,32 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      User.hasMany(models.Spot, {
+        foreignKey: 'ownerId',
+        onDelete: 'cascade',
+        hooks: true,
+      });
+
+      User.hasMany(models.Booking, {
+        foreignKey: 'userId',
+        onDelete: 'cascade',
+        hooks: true,
+      });
+
+
     }
   }
   User.init({
+    firstName: 
+    {
+      type: DataTypes.STRING,
+      allowNull: true,  
+    },
+    lastName: 
+    {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     username: 
     {
       type: DataTypes.STRING,
@@ -25,16 +48,6 @@ module.exports = (sequelize, DataTypes) => {
           }
         }
       }
-    },
-    firstName: 
-    {
-      type: DataTypes.STRING,
-      allowNull: false,  
-    },
-    lastName: 
-    {
-      type: DataTypes.STRING,
-      allowNull: false,
     },
     email: 
     {
@@ -60,7 +73,7 @@ module.exports = (sequelize, DataTypes) => {
     modelName: 'User',
     defaultScope: {
       attributes: {
-        exclude: ['hashedPassword','email','createdAt','updatedAt']
+        exclude: ['hashedPassword','email','createdAt','updatedAt']//my note: query could only have id,username, firstName, lastName info
       }
     }
   });
