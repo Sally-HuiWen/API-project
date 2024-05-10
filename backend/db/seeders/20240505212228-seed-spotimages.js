@@ -25,18 +25,18 @@ module.exports = {
     await SpotImage.bulkCreate([
       {
         spotId: 1,
-        url: 'http://localhost:8000/images/spot-id-1.jpeg',
+        url: 'spotImage1',
         preview: true
 
       },
       {
         spotId: 2,
-        url: 'http://localhost:8000/images/spot-id-2.jpeg',
+        url: 'spotImage2',
         preview: true
       },
       {
         spotId: 3,
-        url: 'http://localhost:8000/images/spot-id-3.jpeg',
+        url: 'spotImage3',
         preview: true
 
       },
@@ -53,6 +53,6 @@ module.exports = {
     options.tableName = 'SpotImages';
     return queryInterface.bulkDelete(options, {
       id: {[Op.in]: [1, 2, 3]}
-    }, {})
+    }, )
   }
 };
