@@ -4,52 +4,46 @@ let options = {};
 if (process.env.NODE_ENV === 'production') {
   options.schema = process.env.SCHEMA;
 }
-
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Users', {
+    await queryInterface.createTable('SpotImages', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      firstName: {
+      spotId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'Spots',
+          key: 'id'
+        },
+        onDelete: 'cascade'
+      },
+      url: {
         type: Sequelize.STRING,
-        allowNull: true,
-      },
-      lastName: {
-        type: Sequelize.STRING,
-        allowNull: true,
-      },
-      username: {
-        type: Sequelize.STRING(30),
         allowNull: false,
-        unique: true,
       },
-      email: {
-        type: Sequelize.STRING(256),
-        allowNull: false,
-        unique: true,
-      },
-      hashedPassword: {
-        type: Sequelize.STRING.BINARY,
-        allowNull: false,
+      preview: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false
       },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
+        defaultValue: Sequelize.literal('TIMESTAMP')
       },
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
+        defaultValue: Sequelize.literal('TIMESTAMP')
       }
     }, options);
   },
   async down(queryInterface, Sequelize) {
-    options.tableName = 'Users';
+    options.tableName = 'SpotImages';
     return queryInterface.dropTable(options);
   }
 };
