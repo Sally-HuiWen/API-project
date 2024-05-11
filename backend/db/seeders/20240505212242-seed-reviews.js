@@ -40,7 +40,7 @@ module.exports = {
         review: 'super convenient for skiing!',
         stars: 5,
       },
-    ], {validate: true})
+    ], )
   },
 
   async down (queryInterface, Sequelize) {
@@ -53,6 +53,6 @@ module.exports = {
     options.tableName = 'Reviews';
     return queryInterface.bulkDelete(options, {
       id: {[Op.in]: [1, 2, 3]}
-    }, {})
+    }, )
   }
 };

@@ -30,13 +30,13 @@ module.exports = (sequelize, DataTypes) => {
     spotId: {
       type: DataTypes.INTEGER,
       allowNull: false, 
-      validate: {
-        spotIdNotTheSameAsUserId(value) {
-          if (value === this.userId) {
-            throw new Error('You can not leave a review on your own property!')
-          }
-        }
-      }  
+      // validate: {
+      //   spotIdNotTheSameAsUserId(value) {
+      //     if (value === this.userId) {
+      //       throw new Error('You can not leave a review on your own property!')
+      //     }
+      //   }
+      // }  
     },
     userId: {
       type: DataTypes.INTEGER,
