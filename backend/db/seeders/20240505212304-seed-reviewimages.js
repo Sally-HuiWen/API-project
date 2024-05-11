@@ -24,16 +24,16 @@ module.exports = {
     await ReviewImage.bulkCreate([
       {
         reviewId: 1,
-        url: 'reviewImg1',
+        url: 'http://localhost:8000/images/review-image-1.jpeg',
       },
       {
         reviewId: 2,
-        url: 'reviewImg2',
+        url: 'http://localhost:8000/images/review-image-2.jpeg',
 
       },
       {
         reviewId: 3,
-        url: 'reviewImg3',
+        url: 'http://localhost:8000/images/review-image-1.jpeg',
       },
     ], )//remove {validate: true}
   },
