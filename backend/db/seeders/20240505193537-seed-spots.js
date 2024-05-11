@@ -28,7 +28,7 @@ module.exports = {
         lat: '37.3957831',
         lng: '-122.0766539',
         name: 'Luxury Suite with private bath next to Downtown Mountain View',
-        description: 'This incredibly clean and modern bedroom suite is the perfect place to relax, unwind and enjoy life. Enjoy a movie on our large TV or work from home with a large desk in your room. Conveniently located near tech companies, highways, stores, restaurants and San Jose Airport. Powerful top of the line appliances, a cozy patio, very safe neighborhood across the street from downtown mountain view. The bedroom has access to a private bathroom',
+        description: 'This clean and modern bedroom suite conveniently locates near tech companies, highways, stores, restaurants and San Jose Airport.',
         price: 110,
       },
       {

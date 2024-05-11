@@ -86,17 +86,13 @@ module.exports = (sequelize, DataTypes) => {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        len: [1,100]
-      }
+  
     },
     description: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        len: [1,1000]
-      }
     },
+
     price: {
       type: DataTypes.INTEGER,
       allowNull: false,
