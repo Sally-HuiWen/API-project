@@ -12,7 +12,8 @@ module.exports = {
       reviewId: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references: {model: 'Reviews'}
+        references: {model: 'Reviews'},
+        onDelete: 'cascade',
       },
       url: {
         type: Sequelize.STRING,
@@ -21,12 +22,12 @@ module.exports = {
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: Sequelize.literal('TIMESTAMP')
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
       },
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: Sequelize.literal('TIMESTAMP')
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
       }
     });
   },
