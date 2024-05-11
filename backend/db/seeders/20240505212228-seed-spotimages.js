@@ -13,6 +13,8 @@ if (process.env.NODE_ENV === 'production') {
 
 module.exports = {
   async up (queryInterface, Sequelize) {
+    console.log('Running seeder: SpotImage');
+
     /**
      * Add seed commands here.
      *
@@ -25,18 +27,18 @@ module.exports = {
     await SpotImage.bulkCreate([
       {
         spotId: 1,
-        url: 'http://localhost:8000/images/spot-id-1.jpeg',
+        url: 'spotImage1',
         preview: true
 
       },
       {
         spotId: 2,
-        url: 'http://localhost:8000/images/spot-id-2.jpeg',
+        url: 'spotImage2',
         preview: true
       },
       {
         spotId: 3,
-        url: 'http://localhost:8000/images/spot-id-3.jpeg',
+        url: 'spotImage3',
         preview: true
 
       },

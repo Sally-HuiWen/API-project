@@ -12,6 +12,8 @@ if (process.env.NODE_ENV === 'production') {
 
 module.exports = {
   async up (queryInterface, Sequelize) {
+    console.log('Running seeder: ReviewImage');
+
     /**
      * Add seed commands here.
      *
@@ -24,16 +26,16 @@ module.exports = {
     await ReviewImage.bulkCreate([
       {
         reviewId: 1,
-        url: 'http://localhost:8000/images/review-image-1.jpeg',
+        url: 'reviewImg1',
       },
       {
         reviewId: 2,
-        url: 'http://localhost:8000/images/review-image-2.jpeg',
+        url: 'reviewImg2',
 
       },
       {
         reviewId: 3,
-        url: 'http://localhost:8000/images/review-image-1.jpeg',
+        url: 'reviewImg3',
       },
     ], )//remove {validate: true}
   },

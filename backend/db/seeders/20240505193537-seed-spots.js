@@ -9,6 +9,8 @@ if (process.env.NODE_ENV === 'production') {
 }
 module.exports = {
   async up (queryInterface, Sequelize) {
+    console.log('Running seeder: Spot');
+
     /**
      * Add seed commands here.
      *

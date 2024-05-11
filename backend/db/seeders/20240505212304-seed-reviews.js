@@ -12,6 +12,8 @@ if (process.env.NODE_ENV === 'production') {
 
 module.exports = {
   async up (queryInterface, Sequelize) {
+    console.log('Running seeder: Review');
+
     /**
      * Add seed commands here.
      *
